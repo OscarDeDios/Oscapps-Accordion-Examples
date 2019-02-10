@@ -3,66 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" rel="stylesheet">
     <title>OscappsAccordion</title>
-
-    <style>
-      .container {
-        padding: 40px;
-        font-family: 'Roboto', helvetica, sans-serif;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Ejemplo de uso de plugin de acordeón.</h1>
-      <h2>Ejemplo Ajax</h2>
-      <dl id="OscappsAccordion-ajax" class="OscappsAccordion OscappsAccordion-instanced">
+      <h1>OscappsAccordion</h1><br>
+      <h2>Basic Usage</h2>
+      <dl class="OscappsAccordion">
         <dt>Section 1</dt>
         <dd>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
-          <dl>
-            <dt>Section 1</dt>
-            <dd>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
-            </dd>
-            <dt>Section 2</dt>
-            <dd>
-              <p>Integer sollicitudin hendrerit odio, eu facilisis leo. Nullam dictum dui eu turpis ultrices, at tempor enim finibus. Integer ullamcorper lobortis porta. Pellentesque non ex mattis, convallis massa vel, laoreet elit. Cras at semper risus. Donec efficitur metus quis felis luctus hendrerit in eget enim. Integer gravida elit et mauris dignissim molestie. Nam malesuada justo vel mi auctor, eget rutrum libero scelerisque. Vestibulum odio ipsum, facilisis ut orci quis, rutrum ultrices dolor. Nulla in pretium felis.</p>
-            </dd>
-            <dt>Section 3</dt>
-            <dd>
-              <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
-            </dd>
-          </dl>
-        </dd>
-        <dt>Section 2</dt>
-        <dd>
-          Ajax content...
-        </dd>
-        <dt>Section 3</dt>
-        <dd>
-          <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
-        </dd>
-        <dt>Section 4</dt>
-        <dd>
-          <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
-        </dd>
-        <dt>Section 5</dt>
-        <dd>
-          <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
-        </dd>
-        <dt>Section 6</dt>
-        <dd>
-          <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
-        </dd>
-      </dl>
-
-      <h2>Ejemplo básico</h2>
-      <dl id="OscappsAccordion1" class="OscappsAccordion">
-        <dt class="fade-out">Section 1</dt>
-        <dd>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
         </dd>
         <dt>Section 2</dt>
         <dd>
@@ -75,13 +26,33 @@
         </dd>
       </dl>
 
-      <h2>Selección múltiple</h2>
-      <dl id="OscappsAccordion2" class="OscappsAccordion multiple-selection">
-        <dt class="active">Section 1</dt>
+      <div class="intructions-section">
+        <p>For a basic usage, simply add "OscappsAccordion" class to a definition list (DL).</p>
+      </div>
+      <pre><code class="language-markup">
+&lt;dl class=&quot;OscappsAccordion&quot;&gt;
+  &lt;dt&gt;Section 1&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section1&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 2&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section2&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 3&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section 3&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+      </code></pre>
+
+      <h2>Multiple Selection</h2>
+      <dl class="OscappsAccordion multiple-selection">
+        <dt class="is-active">Section 1</dt>
           <dd>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
+            <p>Open this section</p>
           </dd>
-          <dt class="active">Section 2</dt>
+          <dt>Section 2</dt>
           <dd>
             <p>Integer sollicitudin hendrerit odio, eu facilisis leo. Nullam dictum dui eu turpis ultrices, at tempor enim finibus. Integer ullamcorper lobortis porta. Pellentesque non ex mattis, convallis massa vel, laoreet elit. Cras at semper risus. Donec efficitur metus quis felis luctus hendrerit in eget enim. Integer gravida elit et mauris dignissim molestie. Nam malesuada justo vel mi auctor, eget rutrum libero scelerisque. Vestibulum odio ipsum, facilisis ut orci quis, rutrum ultrices dolor. Nulla in pretium felis.</p>
             <p>Integer sollicitudin hendrerit odio, eu facilisis leo. Nullam dictum dui eu turpis ultrices, at tempor enim finibus. Integer ullamcorper lobortis porta. Pellentesque non ex mattis, convallis massa vel, laoreet elit. Cras at semper risus. Donec efficitur metus quis felis luctus hendrerit in eget enim. Integer gravida elit et mauris dignissim molestie. Nam malesuada justo vel mi auctor, eget rutrum libero scelerisque. Vestibulum odio ipsum, facilisis ut orci quis, rutrum ultrices dolor. Nulla in pretium felis.</p>
@@ -91,6 +62,55 @@
             <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
           </dd>
         </dl>
+        <div class="intructions-section">
+          <p>Add <b>"OscappsAccordion-multiple-selection"</b> class to have the possibility to open more than one section at the same time.<br>
+          Add <b>"is-active"</b> class to create the accordion opening a section.</p>
+        </div>
+
+        <pre><code class="language-markup">
+&lt;dl class=&quot;OscappsAccordion multiple-selection&quot;&gt;
+  &lt;dt class=&quot;is-active&quot;&gt;Section 1&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section1&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 2&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section2&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 3&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Content Section 3&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+        </code></pre>
+
+        <h2>Initialize with instantion class</h2>
+        <div class="intructions-section">
+          <p>In order to have more control possibilities is possible to create the accordion instantiating the Object. In this case add the class
+          <b>is-instanced</b>.</p>
+        </div>
+            <pre><code class="language-markup">
+&lt;dl id=&quot;accordion-id&quot; class=&quot;OscappsAccordion is-instanced&quot;&gt;
+  &lt;dt class=&quot;is-active&quot;&gt;Section 1&lt;/dt&gt;
+  &lt;dd&gt;...
+            </code></pre>
+
+            <p>Import the plugin and instance the class passing the DOM element of the dl</p>
+            <pre><code class="language-js">
+import OscappsAccordion from 'oscapps-accordion'
+
+const instance = new OscappsAccordion(document.getElementById('accordion-id'), options)
+            </code></pre>
+        <h2>Options</h2>(work in progress)
+        <!-- arrowIcon = true,
+        multipleSelection = false,
+        ajaxContent = false,
+        onOpen = false,
+        animationTime = false -->
     </div>
+    <a href="https://github.com/OscarDeDios/OscappsAccordion" class="github-ribbon" target="_blank">
+      <img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+    </a>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
   </body>
 </html>

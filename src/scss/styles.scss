@@ -1,0 +1,26 @@
+body {
+  background-color: #e6e6e6;
+}
+
+.container {
+  padding: 40px;
+  font-family: 'Roboto', helvetica, sans-serif;
+  line-height: 25px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+.intructions-section {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.github-ribbon img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border: 0;
+}

@@ -1,6 +1,8 @@
 
 import OscappsAccordion from 'oscapps-accordion'
 
+import './scss/styles.scss'
+
 document.addEventListener('DOMContentLoaded', () => {
   const instance = new OscappsAccordion(document.getElementById('OscappsAccordion-ajax'), {
     ajaxContent: [{
