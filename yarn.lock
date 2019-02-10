@@ -4042,9 +4042,9 @@ os-tmpdir@^1.0.0, os-tmpdir@^1.0.1, os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
-oscapps-accordion@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/oscapps-accordion/-/oscapps-accordion-1.0.1.tgz#9085bc6e251027c50a9039eb66d9b0742a9fc5ea"
+oscapps-accordion@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/oscapps-accordion/-/oscapps-accordion-1.0.2.tgz#b802834d1a69b7f24a062c39c03d64c33ede5a98"
   dependencies:
     babel-polyfill "^6.26.0"
     whatwg-fetch "^3.0.0"
