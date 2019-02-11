@@ -2,13 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" rel="stylesheet">
     <title>OscappsAccordion</title>
   </head>
   <body>
     <div class="container">
-      <h1>OscappsAccordion</h1><br>
+      <h1>Oscapps Accordion</h1><br>
+      <p>Plugin to show and hide content with a slide animation.</p>
+
       <h2>Basic Usage</h2>
       <dl class="OscappsAccordion">
         <dt>Section 1</dt>
@@ -27,13 +29,15 @@
       </dl>
 
       <div class="intructions-section">
-        <p>For a basic usage, simply add "OscappsAccordion" class to a definition list (DL).</p>
+        <p>For a basic usage, simply add <b><i>OscappsAccordion</i></b> class to a
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl" target="_blank">definition list (dl)</a>
+        </p>
       </div>
       <pre><code class="language-markup">
 &lt;dl class=&quot;OscappsAccordion&quot;&gt;
   &lt;dt&gt;Section 1&lt;/dt&gt;
   &lt;dd&gt;
-    &lt;p&gt;Content Section1&lt;/p&gt;
+    &lt;p&gt;Content Section 1&lt;/p&gt;
   &lt;/dd&gt;
   &lt;dt&gt;Section 2&lt;/dt&gt;
   &lt;dd&gt;
@@ -47,10 +51,10 @@
       </code></pre>
 
       <h2>Multiple Selection</h2>
-      <dl class="OscappsAccordion multiple-selection">
+      <dl class="OscappsAccordion is-multiple-selection">
         <dt class="is-active">Section 1</dt>
           <dd>
-            <p>Open this section</p>
+            <p>Open this section by default</p>
           </dd>
           <dt>Section 2</dt>
           <dd>
@@ -63,12 +67,12 @@
           </dd>
         </dl>
         <div class="intructions-section">
-          <p>Add <b>"OscappsAccordion-multiple-selection"</b> class to have the possibility to open more than one section at the same time.<br>
-          Add <b>"is-active"</b> class to create the accordion opening a section.</p>
+          <p>Add <b><i>is-multiple-selection</i></b> class to have the possibility to open more than one section at the same time.<br>
+          Add <b><i>is-active</i></b> class to create the accordion opening a section by default.</p>
         </div>
 
         <pre><code class="language-markup">
-&lt;dl class=&quot;OscappsAccordion multiple-selection&quot;&gt;
+&lt;dl class=&quot;OscappsAccordion is-multiple-selection&quot;&gt;
   &lt;dt class=&quot;is-active&quot;&gt;Section 1&lt;/dt&gt;
   &lt;dd&gt;
     &lt;p&gt;Content Section1&lt;/p&gt;
@@ -87,10 +91,10 @@
         <h2>Initialize with instantion class</h2>
         <div class="intructions-section">
           <p>In order to have more control possibilities is possible to create the accordion instantiating the Object. In this case add the class
-          <b>is-instanced</b>.</p>
+            <b><i>is-instance</i></b>.</p>
         </div>
             <pre><code class="language-markup">
-&lt;dl id=&quot;accordion-id&quot; class=&quot;OscappsAccordion is-instanced&quot;&gt;
+&lt;dl id=&quot;accordion-id&quot; class=&quot;OscappsAccordion is-instance&quot;&gt;
   &lt;dt class=&quot;is-active&quot;&gt;Section 1&lt;/dt&gt;
   &lt;dd&gt;...
             </code></pre>
@@ -99,14 +103,250 @@
             <pre><code class="language-js">
 import OscappsAccordion from 'oscapps-accordion'
 
-const instance = new OscappsAccordion(document.getElementById('accordion-id'), options)
+const dlElement = document.getElementById('accordion-id')
+
+const instance = new OscappsAccordion(dlElement, options)
             </code></pre>
-        <h2>Options</h2>(work in progress)
-        <!-- arrowIcon = true,
-        multipleSelection = false,
-        ajaxContent = false,
-        onOpen = false,
-        animationTime = false -->
+        <h2>Options</h2>
+
+        OscappsAccordion provides several options to customize its behaviour:
+
+        <h3>multipleSelection (Boolean)</h3>
+        Used to set the multiple selection, already explained above.
+
+        <pre><code class="language-js">
+  const instance = new OscappsAccordion(dlElement, { multipleSelection: true })
+        </code></pre>
+        Defaults to false.
+
+        <h3>arrowIcon (Boolean)</h3>
+        Used to remove the default arrow icon that is used to indicate if the section is open.
+
+        <pre><code class="language-js">
+  const instance = new OscappsAccordion(dlElement, { arrowIcon: false })
+        </code></pre>
+        Defaults to true.
+
+        <h3>animationTime (Integer)</h3>
+        Used to set the animation time in miliseconds. The sections are hide and showed with a slide animation, this animation will
+        take <i>animationTime</i> to finish.
+
+        <pre><code class="language-js">
+  const instance = new OscappsAccordion(dlElement, { animationTime: 1200 })
+        </code></pre>
+        Defaults to 600.
+
+        <h3>onOpen (function)</h3>
+        Callback to execute when a section is opened.
+
+        <pre><code class="language-js">
+  const callback = () => {
+    alert('Testing awesome plugin')
+  }
+
+  const instance = new OscappsAccordion(dlElement, { onOpen: callback})
+        </code></pre>
+        Defaults to false.
+
+        <h3>ajaxContent (array)</h3>
+        It's possible to assing ajax content to one or more sections. The parameter is an array of objects.<br><br>
+        The object has two fields:
+        <ul>
+          <li><b>indexSection</b>: section to fill with the html content placed in the url. The index starts at zero, (the
+            first section is 0, second 1...). If there is some content in the section will be replaced with the ajax content.</li>
+          <li><b>url</b>: url of the content</li>
+        </ul>
+
+        <pre><code class="language-js">
+const instance = new OscappsAccordion(dlElement, {
+  ajaxContent: [{
+    indexSection: 1,
+    url: './assets/ajaxContent1.html'
+  }, {
+    indexSection: 3,
+    url: './assets/ajaxContent2.html'
+  }]
+})
+        </code></pre>
+        Defaults to false.
+
+        <h2>Instance Example 1</h2>
+
+        Accordion with ajax content in sections 2 (1) and 4 (3) and animation time of 2 seconds.
+
+        <dl id="OscappsAccordion-example-1" class="OscappsAccordion is-instance">
+          <dt>Section 1</dt>
+          <dd>
+            Content Section 1
+          </dd>
+          <dt>Section 2</dt>
+          <dd>
+            ajax content
+          </dd>
+          <dt>Section 3</dt>
+          <dd>
+            <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
+          </dd>
+          <dt>Section 4</dt>
+          <dd>
+            ajax content
+          </dd>
+        </dl>
+
+        <pre><code class="language-markup">
+&lt;dl id=&quot;OscappsAccordion-example-1&quot; class=&quot;OscappsAccordion is-instance&quot;&gt;
+  &lt;dt&gt;Section 1&lt;/dt&gt;
+  &lt;dd&gt;
+    Content Section 1
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 2&lt;/dt&gt;
+  &lt;dd&gt;
+    ajax content
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 3&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 4&lt;/dt&gt;
+  &lt;dd&gt;
+    ajax content
+  &lt;/dd&gt;
+&lt;/dl&gt;
+        </code></pre>
+
+        <pre><code class="language-js">
+const instance = new OscappsAccordion(document.getElementById('OscappsAccordion-ajax'), {
+  ajaxContent: [{
+    indexSection: 1,
+    url: './assets/ajaxContent1.html'
+  }, {
+    indexSection: 3,
+    url: './assets/ajaxContent2.html'
+  }],
+  animationTime: 2000
+})
+        </code></pre>
+
+      <h2>Instance Example 2</h2>
+
+              Accordion without icons and a callback execution when open
+
+              <dl id="OscappsAccordion-example-2" class="OscappsAccordion is-instance">
+                <dt>Section 1</dt>
+                <dd>
+                  Content Section 1
+                </dd>
+                <dt>Section 2</dt>
+                <dd>
+                  Content Section 2
+                </dd>
+              </dl>
+
+              <pre><code class="language-markup">
+&lt;dl id=&quot;OscappsAccordion-example-2&quot; class=&quot;OscappsAccordion is-instance&quot;&gt;
+  &lt;dt&gt;Section 1&lt;/dt&gt;
+  &lt;dd&gt;
+    Content Section 1
+  &lt;/dd&gt;
+  &lt;dt&gt;Section 2&lt;/dt&gt;
+  &lt;dd&gt;
+    Content Section 2
+  &lt;/dd&gt;
+&lt;/dl&gt;
+              </code></pre>
+              <pre><code class="language-js">
+const callback = () => {
+  alert('Testing awesome plugin')
+}
+
+const instance2 = new OscappsAccordion(document.getElementById('OscappsAccordion-ajax2'), {
+  onOpen: callback,
+  arrowIcon: false
+})
+        </code></pre>
+
+        <h2>Methods</h2>
+      <h3>open</h3>
+      Open the section specified in the parameter (first section is 0).
+
+      <pre><code class="language-js">
+instance.open(2)
+      </code></pre>
+
+      <h3>openAll</h3>
+      Open all the sections.
+
+      <pre><code class="language-js">
+instance.openAll()
+      </code></pre>
+
+      <h3>close</h3>
+      Close the section specified in the parameter (first section is 0).
+
+      <pre><code class="language-js">
+instance.close(2)
+      </code></pre>
+
+      <h3>closeAll</h3>
+      Close all the sections
+
+      <pre><code class="language-js">
+instance.closeAll()
+      </code></pre>
+
+      <h3>toggle</h3>
+      Open the section specified in the parameter if it's closed, or closes it if it's open.
+
+      <pre><code class="language-js">
+instance.toggle(2)
+      </code></pre>
+
+      <h3>isOpen</h3>
+      Return if the section specified in the parameter is open.
+
+      <pre><code class="language-js">
+if (isOpen(2)) { ... }
+      </code></pre>
+
+      <h3>Chaining methods</h3>
+      It's possible to chain methods.
+
+      <pre><code class="language-js">
+instance.open(2)
+        .open(1)
+        .close(2)
+      </code></pre>
+
+    <h2>Methods Example </h2>
+
+    Accordion with ajax content in sections 1 and 3 and animation time of 1500 miliseconds.
+
+    <dl id="OscappsAccordion-example-3" class="OscappsAccordion is-instance">
+      <dt>Section 1</dt>
+        <dd>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac mauris ac lacus finibus venenatis eget fringilla odio. Nulla ligula nulla, vestibulum nec consectetur at, ornare sed felis. Pellentesque mattis, urna finibus eleifend aliquet, est leo ultrices eros, in varius felis massa egestas magna. Aliquam non est sollicitudin, vestibulum lacus vitae, rhoncus ex. Mauris rhoncus tellus leo, id suscipit lectus bibendum in. Nunc nec fringilla risus, ut tincidunt eros. Sed justo dui, placerat et neque ut, sollicitudin consequat nibh. Mauris interdum enim ut leo ornare, placerat blandit libero mollis. Aliquam molestie sagittis fermentum. Nulla fermentum nibh vitae sapien congue lobortis. Suspendisse ac diam ac lacus suscipit vulputate. Suspendisse vel viverra turpis.</p>
+        </dd>
+        <dt>Section 2</dt>
+        <dd>
+          <p>Integer sollicitudin hendrerit odio, eu facilisis leo. Nullam dictum dui eu turpis ultrices, at tempor enim finibus. Integer ullamcorper lobortis porta. Pellentesque non ex mattis, convallis massa vel, laoreet elit. Cras at semper risus. Donec efficitur metus quis felis luctus hendrerit in eget enim. Integer gravida elit et mauris dignissim molestie. Nam malesuada justo vel mi auctor, eget rutrum libero scelerisque. Vestibulum odio ipsum, facilisis ut orci quis, rutrum ultrices dolor. Nulla in pretium felis.</p>
+          <p>Integer sollicitudin hendrerit odio, eu facilisis leo. Nullam dictum dui eu turpis ultrices, at tempor enim finibus. Integer ullamcorper lobortis porta. Pellentesque non ex mattis, convallis massa vel, laoreet elit. Cras at semper risus. Donec efficitur metus quis felis luctus hendrerit in eget enim. Integer gravida elit et mauris dignissim molestie. Nam malesuada justo vel mi auctor, eget rutrum libero scelerisque. Vestibulum odio ipsum, facilisis ut orci quis, rutrum ultrices dolor. Nulla in pretium felis.</p>
+        </dd>
+        <dt>Section 3</dt>
+        <dd>
+          <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
+        </dd>
+    </dl>
+
+    <div class="buttons">
+      <button id="show-first">Show first</button>
+      <button id="close-first">Close first</button>
+      <button id="toggle-first">Togle first</button>
+      <button id="show-all">Show all</button>
+      <button id="close-all">Close all</button>
+      <button id="is-open">Is open first</button>
+    </div>
+
+
     </div>
     <a href="https://github.com/OscarDeDios/OscappsAccordion" class="github-ribbon" target="_blank">
       <img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
