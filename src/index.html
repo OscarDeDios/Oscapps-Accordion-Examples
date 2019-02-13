@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Oscapps Accordion</h1><br>
+      <h1>Oscapps Accordion</h1>
       <p>Plugin to show and hide content with a slide animation.</p>
 
       <h2>Basic Usage</h2>
@@ -60,11 +60,52 @@
 &lt;/dl&gt;
       </code></pre>
 
+      <h2>Usage with DIV and name classes</h2>
+
+      <div class="intructions-section">
+        <p>
+          The plugin is mainly designed to use with dl's but you can use div's to specifying the header and content section with <b><i>OscappsAccordion-header</i></b>
+           and <b><i>OscappsAccordion-section</i></b> classes.
+        </p>
+      </div>
+
+      <div class="OscappsAccordion">
+        <div class="OscappsAccordion-header">
+          Section 1
+        </div>
+        <div class="OscappsAccordion-section">
+          Content Section 1
+        </div>
+        <div class="OscappsAccordion-header">
+          Section 2
+        </div>
+        <div class="OscappsAccordion-section">
+          Content Section 2
+        </div>
+      </div>
+
+      <pre><code class="language-markup">
+&lt;div class=&quot;OscappsAccordion&quot;&gt;
+  &lt;div class=&quot;OscappsAccordion-header&quot;&gt;
+    Section 1
+  &lt;/div&gt;
+  &lt;div class=&quot;OscappsAccordion-section&quot;&gt;
+    Content Section 1
+  &lt;/div&gt;
+  &lt;div class=&quot;OscappsAccordion-header&quot;&gt;
+    Section 2
+  &lt;/div&gt;
+  &lt;div class=&quot;OscappsAccordion-section&quot;&gt;
+    Content Section 2
+  &lt;/div&gt;
+&lt;/div&gt;
+      </code></pre>
+
       <h2>Multiple Selection</h2>
       <dl class="OscappsAccordion is-multiple-selection">
         <dt class="is-active">Section 1</dt>
           <dd>
-            <p>Open this section by default</p>
+            <p>Opening this section by default</p>
           </dd>
           <dt>Section 2</dt>
           <dd>
@@ -119,34 +160,31 @@ const instance = new OscappsAccordion(dlElement, options)
             </code></pre>
         <h2>Options</h2>
 
-        OscappsAccordion provides several options to customize its behaviour:
+        OscappsAccordion provides several options to customize its behaviour (default value in brackets):
 
-        <h3>multipleSelection (Boolean)</h3>
-        Used to set the multiple selection, already explained above.
+        <h3>multipleSelection (false)</h3>
+        It's used to set the multiple selection, already explained above.
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { multipleSelection: true })
         </code></pre>
-        Defaults to false.
 
-        <h3>arrowIcon (Boolean)</h3>
-        Used to remove the default arrow icon that is used to indicate if the section is open.
+        <h3>arrowIcon (true)</h3>
+        It's used to remove the default arrow icon that is used to indicate if the section is open.
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { arrowIcon: false })
         </code></pre>
-        Defaults to true.
 
-        <h3>animationTime (Integer)</h3>
-        Used to set the animation time in miliseconds. The sections are hide and showed with a slide animation, this animation will
+        <h3>animationTime (600)</h3>
+        It's used to set the animation time in miliseconds. The sections are hide and showed with a slide animation, this animation will
         take <i>animationTime</i> to finish.
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { animationTime: 1200 })
         </code></pre>
-        Defaults to 600.
 
-        <h3>onOpen (function)</h3>
+        <h3>onOpen (false)</h3>
         Callback to execute when a section is opened.
 
         <pre><code class="language-js">
@@ -156,9 +194,8 @@ const instance = new OscappsAccordion(dlElement, options)
 
   const instance = new OscappsAccordion(dlElement, { onOpen: callback})
         </code></pre>
-        Defaults to false.
 
-        <h3>ajaxContent (array)</h3>
+        <h3>ajaxContent (false)</h3>
         It's possible to assing ajax content to one or more sections. The parameter is an array of objects.<br><br>
         The object has two fields:
         <ul>
@@ -178,7 +215,6 @@ const instance = new OscappsAccordion(dlElement, {
   }]
 })
         </code></pre>
-        Defaults to false.
 
         <h2>Instance Example 1</h2>
 
