@@ -44,6 +44,6 @@
     "webpack-merge": "4.1.0"
   },
   "dependencies": {
-    "oscapps-accordion": "^1.0.8"
+    "oscapps-accordion": "^1.0.10"
   }
 }

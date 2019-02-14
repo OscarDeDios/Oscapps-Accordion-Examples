@@ -3991,9 +3991,9 @@ os-tmpdir@^1.0.0, os-tmpdir@^1.0.1, os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
-oscapps-accordion@^1.0.8:
-  version "1.0.8"
-  resolved "http://eibcmasp03.lacaixa.es:8081/nexus/repository/sparq-npm-public/oscapps-accordion/-/oscapps-accordion-1.0.8.tgz#bf757b1fea02b88036ca319f2df9cb4e1d34b20e"
+oscapps-accordion@^1.0.10:
+  version "1.0.10"
+  resolved "http://eibcmasp03.lacaixa.es:8081/nexus/repository/sparq-npm-public/oscapps-accordion/-/oscapps-accordion-1.0.10.tgz#b7f5b128c256f8f7645c0cf775b03bbe2925802d"
   dependencies:
     babel-polyfill "^6.26.0"
     whatwg-fetch "^3.0.0"
