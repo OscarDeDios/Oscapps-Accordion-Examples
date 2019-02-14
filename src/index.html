@@ -102,6 +102,11 @@
       </code></pre>
 
       <h2>Multiple Selection</h2>
+      <div class="InstructionsSection">
+        <p>Add <b><i>is-multiple-selection</i></b> class to have the possibility to open more than one section at the same time.<br>
+        Add <b><i>is-active</i></b> class to create the accordion opening a section by default.</p>
+      </div>
+
       <dl class="OscappsAccordion is-multiple-selection">
         <dt class="is-active">Section 1</dt>
           <dd>
@@ -117,10 +122,7 @@
             <p>Nunc auctor, ex vitae porta luctus, purus elit eleifend enim, id dictum augue risus eget massa. Etiam imperdiet lectus neque, eu ultricies eros dapibus in. Etiam facilisis justo sed magna fringilla, at placerat felis eleifend. Proin eget enim porta, eleifend sem sed, rhoncus dolor. Ut congue quam at facilisis tristique. Quisque eleifend est vel magna gravida rhoncus. Suspendisse potenti. Nullam quis augue congue, auctor sem eu, rhoncus enim. Nulla eros elit, pulvinar at odio et, blandit imperdiet mi. Etiam ut eleifend leo, et sagittis nisi.</p>
           </dd>
         </dl>
-        <div class="InstructionsSection">
-          <p>Add <b><i>is-multiple-selection</i></b> class to have the possibility to open more than one section at the same time.<br>
-          Add <b><i>is-active</i></b> class to create the accordion opening a section by default.</p>
-        </div>
+
 
         <pre><code class="language-markup">
 &lt;dl class=&quot;OscappsAccordion is-multiple-selection&quot;&gt;
@@ -160,25 +162,25 @@ const instance = new OscappsAccordion(dlElement, options)
             </code></pre>
         <h2>Options</h2>
 
-        OscappsAccordion provides several options to customize its behaviour (default value in brackets):
+        <p>OscappsAccordion provides several options to customize its behaviour (default value in brackets):</p>
 
         <h3>multipleSelection (false)</h3>
-        It's used to set the multiple selection, already explained above.
+        <p>It's used to set the multiple selection, already explained above.</p>
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { multipleSelection: true })
         </code></pre>
 
         <h3>arrowIcon (true)</h3>
-        It's used to remove the default arrow icon that is used to indicate if the section is open.
+        <p>It's used to remove the default arrow icon that is used to indicate if the section is open.</p>
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { arrowIcon: false })
         </code></pre>
 
         <h3>animationTime (600)</h3>
-        It's used to set the animation time in miliseconds. The sections are hide and showed with a slide animation, this animation will
-        take <i>animationTime</i> to finish.
+        <p>It's used to set the animation time in miliseconds. The sections are hide and showed with a slide animation, this animation will
+        take <i>animationTime</i> to finish.</p>
 
         <pre><code class="language-js">
   const instance = new OscappsAccordion(dlElement, { animationTime: 1200 })
@@ -196,13 +198,15 @@ const instance = new OscappsAccordion(dlElement, options)
         </code></pre>
 
         <h3>ajaxContent (false)</h3>
-        It's possible to assing ajax content to one or more sections. The parameter is an array of objects.<br><br>
-        The object has two fields:
-        <ul>
-          <li><b>indexSection</b>: section to fill with the html content placed in the url. The index starts at zero, (the
-            first section is 0, second 1...). If there is some content in the section will be replaced with the ajax content.</li>
-          <li><b>url</b>: url of the content</li>
-        </ul>
+        <p>
+          It's possible to assing ajax content to one or more sections. The parameter is an array of objects.<br><br>
+          The object has two fields:
+          <ul>
+            <li><b>indexSection</b>: section to fill with the html content placed in the url. The index starts at zero, (the
+              first section is 0, second 1...). If there is some content in the section will be replaced with the ajax content.</li>
+            <li><b>url</b>: url of the content</li>
+          </ul>
+        </p>
 
         <pre><code class="language-js">
 const instance = new OscappsAccordion(dlElement, {
@@ -218,7 +222,7 @@ const instance = new OscappsAccordion(dlElement, {
 
         <h2>Instance Example 1</h2>
 
-        Accordion with ajax content in sections 2 (1) and 4 (3) and animation time of 2 seconds.
+        <p>Accordion with ajax content in sections 2 (1) and 4 (3) and animation time of 2 seconds.</p>
 
         <dl id="OscappsAccordion-example-1" class="OscappsAccordion is-instance">
           <dt>Section 1</dt>
@@ -275,18 +279,18 @@ const instance = new OscappsAccordion(document.getElementById('OscappsAccordion-
 
       <h2>Instance Example 2</h2>
 
-              Accordion without icons and a callback execution when open
+      <p>Accordion without icons and a callback execution when open</p>
 
-              <dl id="OscappsAccordion-example-2" class="OscappsAccordion is-instance">
-                <dt>Section 1</dt>
-                <dd>
-                  Content Section 1
-                </dd>
-                <dt>Section 2</dt>
-                <dd>
-                  Content Section 2
-                </dd>
-              </dl>
+      <dl id="OscappsAccordion-example-2" class="OscappsAccordion is-instance">
+        <dt>Section 1</dt>
+        <dd>
+          Content Section 1
+        </dd>
+        <dt>Section 2</dt>
+        <dd>
+          Content Section 2
+        </dd>
+      </dl>
 
               <pre><code class="language-markup">
 &lt;dl id=&quot;OscappsAccordion-example-2&quot; class=&quot;OscappsAccordion is-instance&quot;&gt;
@@ -312,50 +316,54 @@ const instance2 = new OscappsAccordion(document.getElementById('OscappsAccordion
         </code></pre>
 
         <h2>Methods</h2>
-      <h3>open</h3>
-      Open the section specified in the parameter (first section is 0).
+      <h3>open (indexSection, allowMultiple)</h3>
+      <p>Open the section specified in the parameter (first section is 0). It's possible to force the opening of the
+      section without close other active section's even the accordion was not created as multiple selection.
+      To do this pass true as second parameter (by default is false).</p>
 
       <pre><code class="language-js">
 instance.open(2)
       </code></pre>
 
       <h3>openAll</h3>
-      Open all the sections even the accordion was not created with multiple-selection option.
+      <p>Open all the sections even the accordion was not created with multiple-selection option.</p>
 
       <pre><code class="language-js">
 instance.openAll()
       </code></pre>
 
       <h3>close</h3>
-      Close the section specified in the parameter (first section is 0).
+      <p>Close the section specified in the parameter (first section is 0).</p>
 
       <pre><code class="language-js">
 instance.close(2)
       </code></pre>
 
       <h3>closeAll</h3>
-      Close all the sections
+      <p>Close all the sections</p>
 
       <pre><code class="language-js">
 instance.closeAll()
       </code></pre>
 
-      <h3>toggle</h3>
-      Open the section specified in the parameter if it's closed, or closes it if it's open.
+      <h3>toggle (indexSection, allowMultiple)</h3>
+      <p>Open the section specified in the parameter if it's closed, or closes it if it's open.
+        It's possible to force the opening of the section without close other active section's even the accordion was not
+        created as multiple selection. To do this pass true as second parameter (by default is false).</p>
 
       <pre><code class="language-js">
 instance.toggle(2)
       </code></pre>
 
-      <h3>isOpen</h3>
-      Return if the section specified in the parameter is open.
+      <h3>isOpen (indexSection)</h3>
+      <p>Return if the section specified in the parameter is open.</p>
 
       <pre><code class="language-js">
 if (isOpen(2)) { ... }
       </code></pre>
 
       <h3>Chaining methods</h3>
-      It's possible to chain methods.
+      <p>It's possible to chain methods.</p>
 
       <pre><code class="language-js">
 instance.open(2)
@@ -365,7 +373,7 @@ instance.open(2)
 
     <h2>Methods Example </h2>
 
-    Accordion with ajax content in sections 1 and 3 and animation time of 1500 miliseconds.
+    <p>Accordion with ajax content in sections 1 and 3 and animation time of 1500 miliseconds.</p>
 
     <dl id="OscappsAccordion-example-3" class="OscappsAccordion is-instance">
       <dt>Section 1</dt>
